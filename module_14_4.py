@@ -67,7 +67,6 @@ async def calculate(message):
 async def get_buying_list(message):
     get_all_products()
     products = cursor.fetchall()
-    print(type(products))
     for product in products:
         await message.answer(f'Название: {product[1]} | Описание: {product[2]} | Цена: {product[3]}')
         with open(f'{product[0]}.png', 'rb') as img:
